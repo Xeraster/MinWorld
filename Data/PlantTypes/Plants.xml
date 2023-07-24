@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PlantType>
+		<defName>Tree</defName>
+		<label>Tree</label>
+		<description>A basic wooden tree</description>
+		<texture>Plants/Tree/Tree.png</texture>
+		<texture_mature>Plants/Tree/Tree.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>None</resarchToPlant>
+		<minTemp>-60</minTemp>
+		<maxTemp>60</maxTemp>
+		<minFertility>0.8</minFertility>
+
+		<nutrition>0</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.95</needsLight>
+		<daysToGrow>600</daysToGrow>
+
+		<harvestSkill>0</harvestSkill>
+		<harvestProducts>
+			<li>
+				<thing>Wood</thing>
+				<amount>50</amount>
+			</li>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>5000</marketValue>
+		<hitPoints>120</hitPoints>
+		<flammability>1.0</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</PlantType>
+
+	<PlantType>
+		<defName>Cactus</defName>
+		<label>Cactus</label>
+		<description>A cactus. It's like a hot weather tree. Do not try to pet one!</description>
+		<texture>Plants/Cactus/Cactus.png</texture>
+		<texture_mature>Plants/Cactus/Cactus.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>None</resarchToPlant>
+		<minTemp>0</minTemp>
+		<maxTemp>105</maxTemp>
+		<minFertility>0.6</minFertility>
+
+		<nutrition>0</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.95</needsLight>
+		<daysToGrow>600</daysToGrow>
+
+		<harvestSkill>0</harvestSkill>
+		<harvestProducts>
+			<li>
+				<thing>Wood</thing>
+				<amount>5</amount>
+			</li>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>5000</marketValue>
+		<hitPoints>120</hitPoints>
+		<flammability>1.0</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</PlantType>
+
+	<PlantType>
+		<defName>PalmTree</defName>
+		<label>Palm Tree</label>
+		<description>a tree except different</description>
+		<texture>Plants/PalmTree/PalmTree.png</texture>
+		<texture_mature>Plants/PalmTree/PalmTree.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>None</resarchToPlant>
+		<minTemp>10</minTemp>
+		<maxTemp>105</maxTemp>
+		<minFertility>0.4</minFertility>
+
+		<nutrition>0</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.95</needsLight>
+		<daysToGrow>300</daysToGrow>
+
+		<harvestSkill>0</harvestSkill>
+		<harvestProducts>
+			<li>
+				<thing>Wood</thing>
+				<amount>25</amount>
+			</li>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>50</marketValue>
+		<hitPoints>120</hitPoints>
+		<flammability>1.0</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</PlantType>
+
+	<PlantType>
+		<defName>Cannabis</defName>
+		<label>Cannabis</label>
+		<description>Illegal in many jusidictions and responsible for World Wars 5, 6 and 7</description>
+		<texture>Plants/Cannabis/Cannabis.png</texture>
+		<texture_mature>Plants/Cannabis/Cannabis_Mature.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>Weed</resarchToPlant>
+		<minTemp>0</minTemp>
+		<maxTemp>40</maxTemp>
+		<minFertility>0.6</minFertility>
+
+		<nutrition>0</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.95</needsLight>
+		<daysToGrow>15</daysToGrow>
+
+		<harvestSkill>2</harvestSkill>
+		<harvestProducts>
+			<li>
+				<thing>Cannabis</thing>
+				<amount>20</amount>
+			</li>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>8000</marketValue>
+		<hitPoints>120</hitPoints>
+		<flammability>0.9</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</PlantType>
+
+	<PlantType>
+		<defName>Dandelion</defName>
+		<label>Dandelions</label>
+		<description>Those stupid weeds that grow from your driveway somehow</description>
+		<texture>Plants/Dandelion/Dandelion.png</texture>
+		<texture_mature>Plants/Dandelion/Dandelion_Mature.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>Never</resarchToPlant>
+		<minTemp>0</minTemp>
+		<maxTemp>50</maxTemp>
+		<minFertility>0.4</minFertility>
+
+		<nutrition>0</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.65</needsLight>
+		<daysToGrow>3</daysToGrow>
+
+		<harvestSkill>-1</harvestSkill>
+		<harvestProducts>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>0</marketValue>
+		<hitPoints>20</hitPoints>
+		<flammability>0.9</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</PlantType>
+</Defs>

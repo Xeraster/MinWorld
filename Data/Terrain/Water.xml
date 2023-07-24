@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TerrainDef>
+		<defName>Water</defName>
+		<label>water</label>
+		<description>water is wet</description>
+		<class>Terrain</class>
+		<texture>Terrain/Water/Water.png</texture>
+
+		<movementSpeed>1.0</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-2</beauty>
+		<fertility>0.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>-1</supports>
+	</TerrainDef>
+</Defs>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PlantType>
+		<defName>CrabGrass</defName>
+		<label>Crab Grass</label>
+		<description>its grass</description>
+		<texture>Plants/CrabGrass/CrabGrass.png</texture>
+		<texture_mature>Plants/CrabGrass/CrabGrass.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>Never</resarchToPlant>
+		<minTemp>-10</minTemp>
+		<maxTemp>60</maxTemp>
+		<minFertility>0.4</minFertility>
+
+		<nutrition>0.1</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.4</needsLight>
+		<daysToGrow>3</daysToGrow>
+
+		<harvestSkill>0</harvestSkill>
+		<harvestProducts>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>0</marketValue>
+		<hitPoints>20</hitPoints>
+		<flammability>1.0</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</PlantType>
+
+	<PlantType>
+		<defName>MajestyPalm</defName>
+		<label>Majesty Palm</label>
+		<description>that stupid plant your mom likes to buy more of every time she visits your apartment</description>
+		<texture>Plants/MajestyPalm/MajestyPalm.png</texture>
+		<texture_mature>Plants/MajestyPalm/MajestyPalm.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>Never</resarchToPlant>
+		<minTemp>10</minTemp>
+		<maxTemp>80</maxTemp>
+		<minFertility>0.8</minFertility>
+
+		<nutrition>0.2</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.6</needsLight>
+		<daysToGrow>7</daysToGrow>
+
+		<harvestSkill>0</harvestSkill>
+		<harvestProducts>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>0</marketValue>
+		<hitPoints>20</hitPoints>
+		<flammability>1.0</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</PlantType>
+
+	<PlantType>
+		<defName>Hops</defName>
+		<label>Hops</label>
+		<description>the beer plant</description>
+		<texture>Plants/Hops/Hops.png</texture>
+		<texture_mature>Plants/Hops/Hops.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>Beer</resarchToPlant>
+		<minTemp>0</minTemp>
+		<maxTemp>50</maxTemp>
+		<minFertility>0.8</minFertility>
+
+		<nutrition>0.1</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.8</needsLight>
+		<daysToGrow>9</daysToGrow>
+
+		<harvestSkill>2</harvestSkill>
+		<harvestProducts>
+			<li>
+				<thing>Hops</thing>
+				<amount>20</amount>
+			</li>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>65</marketValue>
+		<hitPoints>80</hitPoints>
+		<flammability>1.0</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</PlantType>
+
+	<PlantType>
+		<defName>HealFlower</defName>
+		<label>Heal Flower</label>
+		<description>dffff</description>
+		<texture>Plants/HealFlower/HealFlower.png</texture>
+		<texture_mature>Plants/HealFlower/HealFlower.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>None</resarchToPlant>
+		<minTemp>-80</minTemp>
+		<maxTemp>80</maxTemp>
+		<minFertility>0.8</minFertility>
+
+		<nutrition>0.1</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.8</needsLight>
+		<daysToGrow>9</daysToGrow>
+
+		<harvestSkill>4</harvestSkill>
+		<harvestProducts>
+			<li>
+				<thing>HerbalMedicine</thing>
+				<amount>1</amount>
+			</li>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>50</marketValue>
+		<hitPoints>100</hitPoints>
+		<flammability>0.3</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</PlantType>
+</Defs>

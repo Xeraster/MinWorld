@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TerrainDef>
+		<defName>BasicGrass</defName>
+		<label>Grass</label>
+		<description>It's fucking grass</description>
+		<class>Terrain</class>
+		<texture>Terrain/Grass/Grass.png</texture>
+
+		<movementSpeed>0.95</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>0</beauty>
+		<fertility>0.95</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>GrassyDirt</defName>
+		<label>Grassy dirt</label>
+		<description>Grass with a little bit of dirt in it</description>
+		<class>Terrain</class>
+		<texture>Terrain/GrassyDirt/GrassyDirt.png</texture>
+
+		<movementSpeed>0.95</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>1.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>MuddyGrass</defName>
+		<label>Muddy grass</label>
+		<description>Dirt with a little bit of grass in it</description>
+		<class>Terrain</class>
+		<texture>Terrain/MuddyGrass/MuddyGrass.png</texture>
+
+		<movementSpeed>0.95</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>1.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>Dirt</defName>
+		<label>Dirt</label>
+		<description>Dirt.</description>
+		<class>Terrain</class>
+		<texture>Terrain/Dirt/Dirt.png</texture>
+
+		<movementSpeed>0.95</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>1.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>Rock</defName>
+		<label>Rock</label>
+		<description>Densely packed rock.</description>
+		<class>Terrain</class>
+		<texture>Terrain/Rock/Rock.png</texture>
+
+		<movementSpeed>0.95</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>0.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>RockyDirt</defName>
+		<label>Rocky dirt</label>
+		<description>We took some dirt and some rock and put it together to make rocky dirt. Still waiting to be awarded a Nobel Prize for this out of the box, off the wall idea.</description>
+		<class>Terrain</class>
+		<texture>Terrain/RockyDirt/RockyDirt.png</texture>
+
+		<movementSpeed>0.95</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>0.5</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>RockyIce</defName>
+		<label>Rocky ice</label>
+		<description>ice and rocks. Does not taste like rocky road ice cream for some reason.</description>
+		<class>Terrain</class>
+		<texture>Terrain/RockyIce/RockyIce.png</texture>
+
+		<movementSpeed>0.95</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>0.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>RockySand</defName>
+		<label>Rocky sand</label>
+		<description>sand with a side of rocks</description>
+		<class>Terrain</class>
+		<texture>Terrain/RockySand/RockySand.png</texture>
+
+		<movementSpeed>0.9</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>0.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>Sand</defName>
+		<label>sand</label>
+		<description>Anakin Skywaler's least favorite thing</description>
+		<class>Terrain</class>
+		<texture>Terrain/Sand/Sand.png</texture>
+
+		<movementSpeed>0.8</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>0.65</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>Ice</defName>
+		<label>Ice</label>
+		<description>It's fucking ice.</description>
+		<class>Terrain</class>
+		<texture>Terrain/Ice/Ice.png</texture>
+
+		<movementSpeed>0.90</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>1</beauty>
+		<fertility>0.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+
+	<TerrainDef>
+		<defName>Gravel</defName>
+		<label>Gravel</label>
+		<description>A bunch of small rocks</description>
+		<class>Terrain</class>
+		<texture>Terrain/Gravel/Gravel.png</texture>
+
+		<movementSpeed>1.0</movementSpeed>
+		<commonality>1.0</commonality>
+		<beauty>-1</beauty>
+		<fertility>0.0</fertility>
+		<!-- -2 = space. -1 = water. 0 = light. 1 = medium. 2 = heavy -->
+		<supports>2</supports>
+	</TerrainDef>
+</Defs>

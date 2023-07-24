@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- a 'thing' is a generic type of object that doesn't serve any functional purpose besides existing or being used in crafting recipes -->
+	<ThingType>
+		<defName>Rock</defName>
+		<label>Rock</label>
+		<description>a rock, found on the ground.</description>
+		<texture_folder>Things/Resources/SmallRock</texture_folder><!-- stackable types use texture folder instead -->
+		<texture_prefix>SmallRock</texture_prefix><!-- anything with textureStack value of true has to have this value. This allows you to use the same texture on multiple different items if desired -->
+		<textureStack>true</textureStack><!-- whether to use the 1-2-3 stackable texture convention or use a single texuture for all stack sizes -->
+		<!-- see thing.h and thing.hpp in source code files and figure it out yourself if you need more information about how this works this isn't fucking game development daycare-->	
+		<class>Thing</class>
+
+		<stackSize>75</stackSize>
+		<marketValue>1</marketValue>
+		<hitPoints>-1</hitPoints>
+		<flammability>0</flammability>
+		<weight>0.1</weight>
+		<canRotate>false</canRotate>
+		<stuffColor>59959f</stuffColor><!-- the color is in rgb hex -->
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</ThingType>
+
+	<ThingType>
+		<defName>WoodLog</defName>
+		<label>Wood</label>
+		<description>A type of flammable composite material that grows natrually.</description>
+		<texture_folder>Things/Resources/WoodLog</texture_folder>
+		<texture_prefix>WoodLog</texture_prefix><!-- anything with textureStack value of true has to have this value. This allows you to use the same texture on multiple different items if desired -->
+		<textureStack>true</textureStack><!-- whether to use the 1-2-3 stackable texture convention or use a single texuture for all stack sizes -->
+		<class>Thing</class>
+
+		<stackSize>250</stackSize>
+		<marketValue>10</marketValue>
+		<hitPoints>100</hitPoints>
+		<flammability>1</flammability>
+		<weight>1</weight>
+		<canRotate>false</canRotate>
+		<stuffColor>a88f59</stuffColor><!-- the color is in rgb hex -->
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</ThingType>
+
+	<ThingType>
+		<defName>Iron</defName>
+		<label>Iron</label>
+		<description>Metallic iron</description>
+		<texture_folder>Things/Resources/Ingot</texture_folder>
+		<texture_prefix>Ingot</texture_prefix><!-- anything with textureStack value of true has to have this value. This allows you to use the same texture on multiple different items if desired -->
+		<textureStack>true</textureStack><!-- whether to use the 1-2-3 stackable texture convention or use a single texuture for all stack sizes -->
+		<class>Thing</class>
+
+		<stackSize>999</stackSize>
+		<marketValue>0.12</marketValue><!-- irl USD per kg on iron at time of this writing -->
+		<hitPoints>100</hitPoints>
+		<flammability>0</flammability>
+		<weight>1</weight>
+		<canRotate>false</canRotate>
+		<stuffColor>616161</stuffColor><!-- the color is in rgb hex. 797979 for steel-->
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</ThingType>
+
+	<ThingType>
+		<defName>Copper</defName>
+		<label>Copper</label>
+		<description>Metallic copper.</description>
+		<texture_folder>Things/Resources/Ingot</texture_folder>
+		<texture_prefix>Ingot</texture_prefix><!-- anything with textureStack value of true has to have this value. This allows you to use the same texture on multiple different items if desired -->
+		<textureStack>true</textureStack><!-- whether to use the 1-2-3 stackable texture convention or use a single texuture for all stack sizes -->
+		<class>Thing</class>
+
+		<stackSize>999</stackSize>
+		<marketValue>8.6</marketValue><!-- irl USD per kg on copper at time of this writing -->
+		<hitPoints>100</hitPoints>
+		<flammability>1</flammability>
+		<weight>1</weight>
+		<canRotate>false</canRotate>
+		<stuffColor>b66325</stuffColor>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</ThingType>
+
+	<ThingType>
+		<defName>RubberDuck</defName>
+		<label>Rubber Duck</label>
+		<description>A rubber duck. This isn't a euphamism for anything, it's an actual bath toy children often play with. Rubber ducks are also great for helping you debug problems with your code.</description>
+		<texture_folder>Things/Resources/RubberDuck</texture_folder>
+		<texture_prefix>RubberDuck</texture_prefix><!-- anything with textureStack value of true has to have this value. This allows you to use the same texture on multiple different items if desired -->
+		<textureStack>true</textureStack><!-- whether to use the 1-2-3 stackable texture convention or use a single texuture for all stack sizes -->
+		<class>Thing</class>
+
+		<stackSize>250</stackSize>
+		<marketValue>10</marketValue>
+		<hitPoints>100</hitPoints>
+		<flammability>1</flammability>
+		<weight>1</weight>
+		<canRotate>false</canRotate>
+		<stuffColor>ffff00</stuffColor>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</ThingType>
+</Defs>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<BuildingType>
+		<defName>ResearchSpot</defName>
+		<label>Research Spot</label>
+		<description>A spot for performing primitive research and development tasks.</description>
+		<texture>Buildings/ResearchSpot/ResearchSpot.png</texture>
+		<texture_off>Buildings/ResearchSpot/ResearchSpot.png</texture_off>
+		<texture_mask>Buildings/ResearchSpot/ResearchSpot.png</texture_mask>
+		<class>Building</class>
+
+		<buildingSubclass>ResearchBuilding</buildingSubclass>
+		<subclassData>
+			<researchSpeedMult>0.5</researchSpeedMult>
+		</subclassData>
+
+		<resarchToBuild>None</resarchToBuild>
+		<minTemp>-60</minTemp>
+		<maxTemp>60</maxTemp>
+
+		<constructSkill>0</constructSkill>
+		<workToBuild>3</workToBuild>
+		<minifiable>True</minifiable>
+		<funFactor>0</funFactor>
+		<passability>2</passability><!-- 0: impassible. 1: impassible but not airtight. 2: slows movement. 3: passable -->
+		<footprintx>1</footprintx>
+		<footprinty>1</footprinty>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<buildRecipe>
+			<li>
+				<thing>Wood</thing>
+				<amount>2</amount>
+			</li>
+			<li>
+				<thing>Stone</thing>
+				<amount>3</amount>
+			</li>
+		</buildRecipe>
+
+		<stackSize>1</stackSize>
+		<marketValue>10</marketValue>
+		<hitPoints>-1</hitPoints>
+		<flammability>0</flammability>
+		<weight>1</weight>
+		<canRotate>true</canRotate>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</BuildingType>
+
+	<BuildingType>
+		<defName>Well</defName>
+		<label>Well</label>
+		<description>Well well well, there are wells in this game.</description>
+		<texture>Buildings/Well/Well.png</texture>
+		<texture_off>Buildings/Well/Well.png</texture_off>
+		<texture_mask>Buildings/Well/Well_mask.png</texture_mask>
+		<class>Building</class>
+
+		<buildingSubclass>BasicWell</buildingSubclass>
+		<subclassData>
+			<flowRate>0.5</flowRate>
+		</subclassData>
+
+		<resarchToBuild>None</resarchToBuild>
+		<minTemp>-60</minTemp>
+		<maxTemp>105</maxTemp>
+
+		<constructSkill>0</constructSkill>
+		<workToBuild>200</workToBuild>
+		<minifiable>False</minifiable>
+		<funFactor>0</funFactor>
+		<passability>1</passability><!-- 0: impassible. 1: impassible but not airtight. 2: slows movement. 3: passable -->
+		<footprintx>1</footprintx>
+		<footprinty>1</footprinty>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<buildRecipe>
+			<li>
+				<thingCategory>BuildingMaterial</thingCategory>
+				<amount>25</amount>
+			</li>
+		</buildRecipe>
+
+		<stackSize>1</stackSize>
+		<marketValue>100</marketValue>
+		<hitPoints>200</hitPoints>
+		<flammability>0</flammability>
+		<weight>100</weight>
+		<canRotate>false</canRotate>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</BuildingType>
+
+	<BuildingType>
+		<defName>Wall</defName>
+		<label>Wall</label>
+		<description>An impassible barrier used to form rooms.</description>
+		<texture>Buildings/Well/Well.png</texture>
+		<texture_off>Buildings/Well/Well.png</texture_off>
+		<texture_mask>Buildings/ResearchSpot/ResearchSpot.png</texture_mask>
+		<class>Building</class>
+
+		<buildingSubclass>Wall</buildingSubclass>
+
+		<resarchToBuild>None</resarchToBuild>
+		<minTemp>-60</minTemp>
+		<maxTemp>60</maxTemp>
+
+		<constructSkill>0</constructSkill>
+		<workToBuild>5</workToBuild>
+		<minifiable>False</minifiable>
+		<funFactor>0</funFactor>
+		<passability>1</passability><!-- 0: impassible. 1: impassible but not airtight. 2: slows movement. 3: passable -->
+		<footprintx>1</footprintx>
+		<footprinty>1</footprinty>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<buildRecipe>
+			<li>
+				<thingCategory>BuildingMaterial</thingCategory>
+				<amount>5</amount>
+			</li>
+		</buildRecipe>
+
+		<stackSize>1</stackSize>
+		<marketValue>10</marketValue>
+		<hitPoints>300</hitPoints>
+		<flammability>1</flammability>
+		<weight>50</weight>
+		<canRotate>false</canRotate>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</BuildingType>
+
+	<BuildingType>
+		<defName>Door</defName>
+		<label>Door</label>
+		<description>A door is like a wall except not</description>
+		<texture>Buildings/ResearchSpot/ResearchSpot.png</texture>
+		<texture_off>Buildings/ResearchSpot/ResearchSpot.png</texture_off>
+		<texture_mask>Buildings/ResearchSpot/ResearchSpot.png</texture_mask>
+		<class>Building</class>
+
+		<buildingSubclass>Door</buildingSubclass>
+
+		<resarchToBuild>None</resarchToBuild>
+		<minTemp>-60</minTemp>
+		<maxTemp>60</maxTemp>
+
+		<constructSkill>1</constructSkill>
+		<workToBuild>50</workToBuild>
+		<minifiable>False</minifiable>
+		<funFactor>0</funFactor>
+		<passability>1</passability><!-- 0: impassible. 1: impassible but not airtight. 2: slows movement. 3: passable -->
+		<footprintx>1</footprintx>
+		<footprinty>1</footprinty>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<buildRecipe>
+			<li>
+				<thingCategory>BuildingMaterial</thingCategory>
+				<amount>5</amount>
+			</li>
+		</buildRecipe>
+
+		<stackSize>1</stackSize>
+		<marketValue>10</marketValue>
+		<hitPoints>150</hitPoints>
+		<flammability>1</flammability>
+		<weight>1</weight>
+		<canRotate>true</canRotate>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</BuildingType>
+
+	<BuildingType>
+		<defName>Bedroll</defName>
+		<label>Bed roll</label>
+		<description>A sleeping bag. Great for sleepovers, being homeless or getting lost in the woods</description>
+		<texture>Buildings/ResearchSpot/ResearchSpot.png</texture>
+		<texture_off>Buildings/ResearchSpot/ResearchSpot.png</texture_off>
+		<texture_mask>Buildings/ResearchSpot/ResearchSpot.png</texture_mask>
+		<class>Building</class>
+
+		<buildingSubclass>Bed</buildingSubclass>
+		<subclassData>
+			<comfort>0.5</comfort>
+		</subclassData>
+
+		<resarchToBuild>PrimitiveFurniture</resarchToBuild>
+		<minTemp>-60</minTemp>
+		<maxTemp>60</maxTemp>
+
+		<constructSkill>1</constructSkill>
+		<workToBuild>50</workToBuild>
+		<minifiable>False</minifiable>
+		<funFactor>0</funFactor>
+		<passability>3</passability><!-- 0: impassible. 1: impassible but not airtight. 2: slows movement. 3: passable -->
+		<footprintx>2</footprintx>
+		<footprinty>1</footprinty>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<buildRecipe>
+			<li>
+				<thingCategory>Fabric</thingCategory>
+				<amount>45</amount>
+			</li>
+		</buildRecipe>
+
+		<stackSize>1</stackSize>
+		<marketValue>100</marketValue>
+		<hitPoints>100</hitPoints>
+		<flammability>1</flammability>
+		<weight>3</weight>
+		<canRotate>true</canRotate>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</BuildingType>
+
+	<BuildingType>
+		<defName>Bed</defName>
+		<label>Bed</label>
+		<description>beds are for sleeping on</description>
+		<texture>Buildings/ResearchSpot/ResearchSpot.png</texture>
+		<texture_off>Buildings/ResearchSpot/ResearchSpot.png</texture_off>
+		<texture_mask>Buildings/ResearchSpot/ResearchSpot.png</texture_mask>
+		<class>Building</class>
+
+		<buildingSubclass>Bed</buildingSubclass>
+		<subclassData>
+			<comfort>0.8</comfort>
+		</subclassData>
+
+		<resarchToBuild>Furniture</resarchToBuild>
+		<minTemp>-60</minTemp>
+		<maxTemp>60</maxTemp>
+
+		<constructSkill>1</constructSkill>
+		<workToBuild>50</workToBuild>
+		<minifiable>False</minifiable>
+		<funFactor>0</funFactor>
+		<passability>3</passability><!-- 0: impassible. 1: impassible but not airtight. 2: slows movement. 3: passable -->
+		<footprintx>2</footprintx>
+		<footprinty>1</footprinty>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<buildRecipe>
+			<li>
+				<thingCategory>Fabric</thingCategory>
+				<amount>20</amount>
+			</li>
+			<li>
+				<thingCategory>BuildingMaterial</thingCategory>
+				<amount>25</amount>
+			</li>
+		</buildRecipe>
+
+		<stackSize>1</stackSize>
+		<marketValue>400</marketValue>
+		<hitPoints>120</hitPoints>
+		<flammability>1</flammability>
+		<weight>20</weight>
+		<canRotate>true</canRotate>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</BuildingType>
+<!--  783b23 is a good color to use for blood -->
+	<BuildingType>
+		<defName>BasicWorkbench</defName>
+		<label>Basic workbench</label>
+		<description>perform basic and primitive types of labor</description>
+		<texture>Buildings/BasicWorkbench/BasicWorkbench_unmasked.png</texture>
+		<texture_off>Buildings/BasicWorkbench/BasicWorkbench_unmasked.png</texture_off>
+		<texture_mask>Buildings/BasicWorkbench/BasicWorkbench_masked.png</texture_mask>
+		<class>Building</class>
+
+		<buildingSubclass>BasicWorkbench</buildingSubclass>
+		<subclassData>
+			<comfort>0.8</comfort>
+		</subclassData>
+
+		<resarchToBuild>Furniture</resarchToBuild>
+		<minTemp>-60</minTemp>
+		<maxTemp>60</maxTemp>
+
+		<constructSkill>1</constructSkill>
+		<workToBuild>50</workToBuild>
+		<minifiable>False</minifiable>
+		<funFactor>0</funFactor>
+		<passability>3</passability><!-- 0: impassible. 1: impassible but not airtight. 2: slows movement. 3: passable -->
+		<footprintx>3</footprintx>
+		<footprinty>1</footprinty>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<buildRecipe>
+			<li>
+				<thingCategory>Fabric</thingCategory>
+				<amount>20</amount>
+			</li>
+			<li>
+				<thingCategory>BuildingMaterial</thingCategory>
+				<amount>25</amount>
+			</li>
+		</buildRecipe>
+
+		<stackSize>1</stackSize>
+		<marketValue>400</marketValue>
+		<hitPoints>120</hitPoints>
+		<flammability>1</flammability>
+		<weight>20</weight>
+		<canRotate>true</canRotate>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</BuildingType>
+
+	<BuildingType>
+		<defName>BasicResearchBench</defName>
+		<label>Basic research bench</label>
+		<description>A work space where simple research tasks can be done</description>
+		<texture>Buildings/BasicResearchBench/BasicResearchBench_unmasked.png</texture>
+		<texture_off>Buildings/BasicResearchBench/BasicResearchBench_unmasked.png</texture_off>
+		<texture_mask>Buildings/BasicResearchBench/BasicResearchBench_masked.png</texture_mask>
+		<class>Building</class>
+
+		<buildingSubclass>ResearchBuilding</buildingSubclass>
+		<subclassData>
+			<researchSpeedMult>0.75</researchSpeedMult>
+		</subclassData>
+
+		<resarchToBuild>BasicResearch</resarchToBuild>
+		<minTemp>-60</minTemp>
+		<maxTemp>60</maxTemp>
+
+		<constructSkill>1</constructSkill>
+		<workToBuild>50</workToBuild>
+		<minifiable>False</minifiable>
+		<funFactor>0</funFactor>
+		<passability>3</passability><!-- 0: impassible. 1: impassible but not airtight. 2: slows movement. 3: passable -->
+		<footprintx>3</footprintx>
+		<footprinty>2</footprinty>
+		<maskInFront>false</maskInFront><!-- to make sprite design easier, you get to choose whether the "mask"* gets drawn first for last -->
+
+		<buildRecipe>
+			<li>
+				<thingCategory>Fabric</thingCategory>
+				<amount>20</amount>
+			</li>
+			<li>
+				<thingCategory>BuildingMaterial</thingCategory>
+				<amount>25</amount>
+			</li>
+		</buildRecipe>
+
+		<stackSize>1</stackSize>
+		<marketValue>400</marketValue>
+		<hitPoints>120</hitPoints>
+		<flammability>1</flammability>
+		<weight>20</weight>
+		<canRotate>true</canRotate>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>1</techLevel>
+	</BuildingType>
+</Defs>
+
+<!-- *it was originally going to mimic Rimworld's sprite color masking system but due to the way SDL works, it's more performance efficient to have seperate "stuff colored" and a non "stuff colored" layers -->

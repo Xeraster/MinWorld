@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Biome>
+		<defName>Wasteland</defName>
+		<label>Rocky Wasteland</label>
+		<description>A wasteland devoid of life and organic matter</description>
+		<mapColor>707070</mapColor><!-- the color is in rgb hex -->
+		<class>Biome</class>
+
+		<!-- 0: supports no life. 1: almost impossible. 2: difficult. 3: moderate. 4: easy. -->
+		<survivability>1.1</survivability>
+		<commonality>0.1</commonality><!-- make this a low number. wasteland is the biome that generally gets used when nothing else fits -->
+		
+		<!-- for zlevel 0 -->
+		<terrainTypes>
+			<li>
+				<terrainDef>Rock</terrainDef>
+				<commonality>2.5</commonality>
+			</li>
+			<li>
+				<terrainDef>Gravel</terrainDef>
+				<commonality>1</commonality>
+			</li>
+			<li>
+				<terrainDef>RockyDirt</terrainDef>
+				<commonality>0.1</commonality>
+			</li>
+		</terrainTypes>
+
+		<!-- anything with a zlevel less than 0 uses terrain from this list instead -->
+		<undergroundTerrainTypes>
+			<li>
+				<terrainDef>Rock</terrainDef>
+				<commonality>1</commonality>
+			</li>
+		</undergroundTerrainTypes>
+
+		<!-- maximum and minimum yearly average temperature in celsius for this type of biome to spawn -->
+		<tempMin>-273.15</tempMin>
+		<tempMax>1300</tempMax>
+
+		<movementDiff>3.4</movementDiff>
+		<forageability>0.01</forageability>
+		<diseaseFrequency>0.1</diseaseFrequency>
+		<wind>0.1</wind>
+		<water>0.1</water>
+		<clouds>1</clouds>
+		<elevationVariance>5.7</elevationVariance>
+
+		<spawnablePlants>
+			<li>
+				<plant>Tree</plant>
+				<commonality>1.0</commonality>
+			</li>
+		</spawnablePlants>
+
+		<spawnableWildlife>
+			<li>
+				<animal>GiantBug</animal>
+				<commonality>9.2</commonality>
+			</li>
+			<li>
+				<animal>Dog</animal>
+				<commonality>0.1</commonality>
+			</li>
+			<li>
+				<animal>PolarBear</animal>
+				<commonality>1.2</commonality>
+			</li>
+		</spawnableWildlife>
+	</Biome>
+
+	<Biome>
+		<defName>TemperateForest</defName>
+		<label>Temperate Forest</label>
+		<description>A standard temperate forest</description>
+		<mapColor>70FF70</mapColor><!-- the color is in rgb hex -->
+		<class>Biome</class>
+
+		<!-- 0: supports no life. 1: almost impossible. 2: difficult. 3: moderate. 4: easy. -->
+		<survivability>2.8</survivability>
+		<commonality>5.0</commonality>
+		
+		<terrainTypes>
+			<li>
+				<terrainDef>BasicGrass</terrainDef>
+				<commonality>1</commonality>
+			</li>
+			<li>
+				<terrainDef>GrassyDirt</terrainDef>
+				<commonality>0.5</commonality>
+			</li>
+			<li>
+				<terrainDef>MuddyGrass</terrainDef>
+				<commonality>0.5</commonality>
+			</li>
+			<li>
+				<terrainDef>Dirt</terrainDef>
+				<commonality>0.5</commonality>
+			</li>
+			<li>
+				<terrainDef>RockyDirt</terrainDef>
+				<commonality>0.5</commonality>
+			</li>
+		</terrainTypes>
+
+		<undergroundTerrainTypes>
+			<li>
+				<terrainDef>Gravel</terrainDef>
+				<commonality>0.35</commonality>
+			</li>
+			<li>
+				<terrainDef>Rock</terrainDef>
+				<commonality>2</commonality>
+			</li>
+			<li>
+				<terrainDef>RockyDirt</terrainDef>
+				<commonality>0.2</commonality>
+			</li>
+		</undergroundTerrainTypes>
+
+		<!-- maximum and minimum yearly average temperature in celsius for this type of biome to spawn -->
+		<tempMin>-15.0</tempMin>
+		<tempMax>55</tempMax>
+
+		<movementDiff>1.0</movementDiff>
+		<forageability>1.0</forageability>
+		<diseaseFrequency>1.0</diseaseFrequency>
+		<wind>1</wind>
+		<water>1</water>
+		<clouds>1</clouds>
+		<elevationVariance>1</elevationVariance>
+
+		<spawnablePlants>
+			<li>
+				<plant>Tree</plant>
+				<commonality>1.0</commonality>
+			</li>
+			<li>
+				<plant>Cannabis</plant>
+				<commonality>1.0</commonality>
+			</li>
+			<li>
+				<plant>Dandelion</plant>
+				<commonality>1.0</commonality>
+			</li>
+
+			<li>
+				<plant>LemonBlossum</plant>
+				<commonality>0.2</commonality>
+			</li>
+			<li>
+				<plant>HealFlower</plant>
+				<commonality>0.2</commonality>
+			</li>
+			<li>
+				<plant>CrabGrass</plant>
+				<commonality>1.0</commonality>
+			</li>
+			<li>
+				<plant>Hops</plant>
+				<commonality>0.05</commonality>
+			</li>
+		</spawnablePlants>
+
+		<spawnableWildlife>
+			<li>
+				<animal>GiantBug</animal>
+				<commonality>9.2</commonality>
+			</li>
+			<li>
+				<animal>Dog</animal>
+				<commonality>0.1</commonality>
+			</li>
+			<li>
+				<animal>PolarBear</animal>
+				<commonality>1.2</commonality>
+			</li>
+		</spawnableWildlife>
+	</Biome>
+
+	<Biome>
+		<defName>Desert</defName>
+		<label>Desert</label>
+		<description>A shitty desert where its hot and shitty</description>
+		<mapColor>e2ca76</mapColor><!-- the color is in rgb hex -->
+		<class>Biome</class>
+
+		<!-- 0: supports no life. 1: almost impossible. 2: difficult. 3: moderate. 4: easy. -->
+		<survivability>2.8</survivability>
+		<commonality>5.0</commonality>
+		
+		<terrainTypes>
+			<li>
+				<terrainDef>Sand</terrainDef>
+				<commonality>1</commonality>
+			</li>
+			<li>
+				<terrainDef>RockySand</terrainDef>
+				<commonality>0.5</commonality>
+			</li>
+		</terrainTypes>
+
+		<undergroundTerrainTypes>
+			<li>
+				<terrainDef>Rock</terrainDef>
+				<commonality>1</commonality>
+			</li>
+		</undergroundTerrainTypes>
+
+		<!-- maximum and minimum yearly average temperature in celsius for this type of biome to spawn -->
+		<tempMin>1.0</tempMin>
+		<tempMax>120</tempMax>
+
+		<movementDiff>2.0</movementDiff>
+		<forageability>0.1</forageability>
+		<diseaseFrequency>1.0</diseaseFrequency>
+		<wind>1</wind>
+		<water>0.1</water>
+		<clouds>1</clouds>
+		<elevationVariance>1</elevationVariance>
+
+		<spawnablePlants>
+			<li>
+				<plant>Cactus</plant>
+				<commonality>1.0</commonality>
+			</li>
+			<li>
+				<plant>Cannabis</plant>
+				<commonality>0.1</commonality>
+			</li>
+		</spawnablePlants>
+
+		<spawnableWildlife>
+			<li>
+				<animal>GiantBug</animal>
+				<commonality>0.3</commonality>
+			</li>
+		</spawnableWildlife>
+	</Biome>
+
+	<Biome>
+		<defName>IceSheet</defName>
+		<label>Ice Sheet</label>
+		<description>A sheet of ice several kilometers thick. Nothing grows here. Nothing lives here. Anyone stranded in one of these is probably doomed.</description>
+		<mapColor>d7fffe</mapColor><!-- the color is in rgb hex -->
+		<class>Biome</class>
+
+		<!-- 0: supports no life. 1: almost impossible. 2: difficult. 3: moderate. 4: easy. -->
+		<survivability>0.1</survivability>
+		<commonality>5.0</commonality>
+		
+		<terrainTypes>
+			<li>
+				<terrainDef>Ice</terrainDef>
+				<commonality>1</commonality>
+			</li>
+			<li>
+				<terrainDef>RockyIce</terrainDef>
+				<commonality>1</commonality>
+			</li>
+		</terrainTypes>
+
+		<undergroundTerrainTypes>
+			<li>
+				<terrainDef>Ice</terrainDef>
+				<commonality>1</commonality>
+			</li>
+		</undergroundTerrainTypes>
+
+		<!-- maximum and minimum yearly average temperature in celsius for this type of biome to spawn -->
+		<tempMin>-273.15</tempMin>
+		<tempMax>5</tempMax><!-- don't let the ice get too warm -->
+
+		<movementDiff>3.4</movementDiff>
+		<forageability>0.2</forageability>
+		<diseaseFrequency>10</diseaseFrequency>
+		<wind>0.1</wind>
+		<water>0.1</water>
+		<clouds>1</clouds>
+		<elevationVariance>0.5</elevationVariance>
+
+		<spawnablePlants>
+			<!--<li>
+				<plant>Tree</plant>
+				<commonality>1.0</commonality>
+			</li>-->
+		</spawnablePlants>
+
+		<spawnableWildlife>
+			<!--<li>
+				<animal>GiantBug</animal>
+				<commonality>9.2</commonality>
+			</li>
+			<li>
+				<animal>Dog</animal>
+				<commonality>0.1</commonality>
+			</li>-->
+			<li>
+				<animal>PolarBear</animal>
+				<commonality>0.2</commonality>
+			</li>
+		</spawnableWildlife>
+	</Biome>
+</Defs>

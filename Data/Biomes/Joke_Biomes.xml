@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<Biome>
+		<defName>Poop</defName>
+		<label>Sewage Dump</label>
+		<description>A sewage dumping site. Stay away from these.</description>
+		<mapColor>7f5e00</mapColor><!-- the color is in rgb hex -->
+		<class>Biome</class>
+
+		<!-- 0: supports no life. 1: almost impossible. 2: difficult. 3: moderate. 4: easy. -->
+		<survivability>0.9</survivability>
+		<commonality>0.1</commonality>
+		
+		<terrainTypes>
+			<li>
+				<terrainDef>Poop</terrainDef>
+				<commonality>1</commonality>
+			</li>
+			<li>
+				<terrainDef>Gravel</terrainDef>
+				<commonality>0.1</commonality>
+			</li>
+		</terrainTypes>
+
+		<undergroundTerrainTypes>
+			<li>
+				<terrainDef>Poop</terrainDef>
+				<commonality>1</commonality>
+			</li>
+		</undergroundTerrainTypes>
+
+		<!-- maximum and minimum yearly average temperature in celsius for this type of biome to spawn -->
+		<tempMin>-273.15</tempMin>
+		<tempMax>100</tempMax>
+
+		<movementDiff>3.4</movementDiff>
+		<forageability>0.2</forageability>
+		<diseaseFrequency>10</diseaseFrequency>
+		<wind>0.1</wind>
+		<water>0.1</water>
+		<clouds>1</clouds>
+		<elevationVariance>0.5</elevationVariance>
+
+		<spawnablePlants>
+			<li>
+				<plant>PoopPlant</plant>
+				<commonality>1.0</commonality>
+			</li>
+		</spawnablePlants>
+
+		<spawnableWildlife>
+			<li>
+				<animal>GiantBug</animal>
+				<commonality>9.2</commonality>
+			</li>
+			<li>
+				<animal>Dog</animal>
+				<commonality>0.1</commonality>
+			</li>
+			<li>
+				<animal>PolarBear</animal>
+				<commonality>1.2</commonality>
+			</li>
+		</spawnableWildlife>
+	</Biome>
+</Defs>

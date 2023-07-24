@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PlantType>
+		<defName>PoopPlant</defName>
+		<label>PoopPlant</label>
+		<description>A vegetative stalk-like plant with little anuses on its leaves. Shits out poop.</description>
+		<texture>Plants/PotatoStalk/PotatoStalk.png</texture>
+		<texture_mature>Plants/PotatoStalk/PotatoStalk_Mature.png</texture_mature>
+		<class>Plant</class>
+
+		<resarchToPlant>Never</resarchToPlant>
+		<minTemp>0</minTemp>
+		<maxTemp>60</maxTemp>
+		<minFertility>0.0</minFertility>
+
+		<nutrition>0.2</nutrition>
+
+		<!-- light level required to grow -->
+		<needsLight>0.90</needsLight>
+		<daysToGrow>6</daysToGrow>
+
+		<harvestSkill>0</harvestSkill>
+		<harvestProducts>
+			<li>
+				<thing>Poop</thing>
+				<amount>4</amount>
+			</li>
+		</harvestProducts>
+
+		<stackSize>1</stackSize>
+		<marketValue>0</marketValue>
+		<hitPoints>120</hitPoints>
+		<flammability>1.0</flammability>
+
+		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
+		<techLevel>0</techLevel>
+	</PlantType>
+</Defs>
