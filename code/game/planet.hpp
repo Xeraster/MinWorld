@@ -22,6 +22,7 @@ planet :: planet(unsigned int seed, double temp, double eccentricity, double axi
     setAvgTemp(temp);//default value is 4
 	setDaysInYear(eccentricity*60);//eccentricity is just a multiplier. 1 = 1 year is 60 days. 2 = 1 year is 120 days
 	setTempVariance(axialTilt);//axial tilt more or less. changes how extreme temperatures get in the coldest and hotest part of the year
+    setSecsPerDay(50000);//arbitrary placeholder value
 	setSeed(seed);
 
     loadedChunks = vector<chunk*>();

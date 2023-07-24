@@ -78,7 +78,7 @@ LTimer fpsTimer;
 LTimer capTimer;
 string timeText;
 const int SCREEN_FPS = 60;
-const double SCREEN_TICKS_PER_SECOND = 300;
+const double SCREEN_TICKS_PER_SECOND = 60;
 const int SCREEN_TICKS_PER_FRAME = SCREEN_TICKS_PER_SECOND / SCREEN_FPS;
 int countedFrames = 0;
 char s[256];
@@ -280,11 +280,25 @@ int main()
     		}
     	//}
 
+		//this only deals with fps counting/tracking and does not control the framerate. Do not touch if you don't know what you're doing
 		if (fpsTimer.getTicks() > SCREEN_TICKS_PER_SECOND * 3)
 		{
+			//cout << "fps ticks since last frame:" << fpsTimer.getTicks() << endl;
 			fpsTimer.stop();
 			fpsTimer.start();
 			countedFrames = 0;
+		}
+
+		//figure out a way to make it delay if the entire frame was cmpleted in 16.6667 milliseconds or less
+		//much like The Powder Toy, the framerate will be locked to 60fps.
+		unsigned int msSinceLastFrame = capTimer.getTicks();//kinda sucks you only get millisecond integer precision. That's going to cost like a 4% performance hit at 60fps
+		capTimer.stop();
+		//since we can't check for 16.66667, check for 16. This means monitors with 60fps will run at 60fps but refresh rate settings higher than 60fps will run at 62.5 fps
+		if (msSinceLastFrame < 16)
+		{
+			cout << "frame delay. Frame finished rendering in " << to_string(16-msSinceLastFrame) << "ms early" << endl;
+			SDL_Delay(16-msSinceLastFrame);
+			//whatever. At least I found a way to cap frames at 16ms instead of 17ms. 62.5 is a better framerate than 58.8235
 		}
 
 	}
@@ -456,11 +470,15 @@ void update()
 		//deletePlayerTorpedos();
 		//Take a quick break after all that hard work
 	int frameticks = capTimer.getTicks();
-	if (frameticks < SCREEN_TICKS_PER_FRAME)
-	{
-		capTimer.stop();
-		SDL_Delay(SCREEN_TICKS_PER_FRAME - frameticks);
-	}
+	//this isn't helpful and it does nothing most of the time
+	//if (frameticks < SCREEN_TICKS_PER_FRAME)
+	//{
+		//this almost never happens
+		//capTimer.stop();
+		//cout << "captimer sdl delay asserted" << endl;
+		//SDL_Delay(SCREEN_TICKS_PER_FRAME - frameticks);
+	//}
+	//cout << "screen ticks per frame = " << SCREEN_TICKS_PER_FRAME << endl;
 	countedFrames++;
 
 	return void();

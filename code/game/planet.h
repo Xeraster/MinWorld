@@ -31,7 +31,7 @@ class planet
         void setTempVariance(float number) { m_tempVariance = number; }
 
         float getSecsPerDay() const { return m_secsPerDay; }
-        void getSecsPerDay(unsigned int number) { m_secsPerDay = number; }
+        void setSecsPerDay(unsigned int number) { m_secsPerDay = number; }
 
         float getDaysInYear() const { return m_daysInYear; }
         void setDaysInYear(unsigned int number) { m_daysInYear = number; }
@@ -93,7 +93,7 @@ class planet
 
         float m_averageTemp;
         float m_tempVariance;
-        unsigned int m_secsPerDay;
+        unsigned int m_secsPerDay;  //all planet days are "24 hours". The length of an hour depends on the number of seconds in a day divided by 24
         unsigned int m_daysInYear;
 
         int m_seed;
