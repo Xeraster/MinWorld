@@ -111,4 +111,14 @@
 		<!-- 0 = feral/animal. 1 = neolithic. 2 = med. 3 = industrial. 4 = nuclear. 5 = space. 6 = ultratech. 7 = god tier. 8 = dev only -->
 		<techLevel>0</techLevel>
 	</ThingType>
+	<!-- 
+	ore ideas:
+	neolithic - unlocks basic metallurgy
+	med - unlocks steel	black powder
+	industrial - unlocks aluminum	synthread	uranium 	guns	dynamite	tnt
+	nuclear - unlocks titanium plutonium 	better guns	basic nuclear weapons
+	space - unlocks plasteel	beam rifles	advanced nuclear weapons
+	ultraech - unlocks ultraweave	unlocks *the endgame alloys* 	holonium	omega poly	pulse charge rifles	neutrino bomb	glaive beam,	biohazard
+	god tier - unlocks unobtainium	godweave	unlimited free enegery 	ark rifles	
+	-->
 </Defs>

@@ -1,5 +1,7 @@
 void setupMainMenu()
 {
+    textSizeTiny = 6 * gscreenx / 1920;
+    textSizeExtraSmall = 8 * gscreenx / 1920;
     textSizeSmall = 8 * gscreenx / 800;
     textSizeMedium = 12 * gscreenx / 800;
     textSizeLarge = 18 * gscreenx / 800;
@@ -187,6 +189,7 @@ void drawNewgameScreen2(int mouseX, int mouseY, int lastMouse)
         double population = planetPopulation.getValue();
 
         cout << "main menu fuck poop" << endl;
+        cout << "yeahLength = " << yearLength << endl;
         newPlanet = planet(stoi(planetSeedBox.text()), globalAvgTemp, yearLength, axialTilt, waterCoverage, population);//bro where tf is the seed stored on the main menu 2 screen? nvm found it
 
         normalInGame = true;
@@ -220,6 +223,8 @@ void ui_initialize()
 //resize handles all the setup for the ui elements taht have to be rerun every time the screen resolution changes
 void on_resize()
 {
+    textSizeTiny = 6 * gscreenx / 1920;
+    textSizeExtraSmall = 8 * gscreenx / 1920;
     textSizeSmall = 8 * gscreeny / 600;
     textSizeMedium = 12 * gscreeny / 600;
     textSizeLarge = 18 * gscreeny / 600;

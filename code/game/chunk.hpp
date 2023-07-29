@@ -94,6 +94,9 @@ void chunk :: generateTiles(int sizeX, int sizeY, int sizeZ)
         testThing2->setStackSize(999);
         testThing3->setStackSize(1);
 
+        //spawn a test pawn
+        spawnPawn(getPawnTypeByDefName("Trilobyte"), 7,7,50,69420);
+
         m_initialized = true;
     }
 }
@@ -227,8 +230,22 @@ thing* chunk :: spawnThing(thingType *theThing, int chunkPosX, int chunkPosY, in
     cout << "spawning a new thing of type " << theThing->defName() << endl;
 
     m_chunkThingsL.push_back(newThing);
-    m_chunkThings.push_back(&m_chunkBuildingsL.back());
+    m_chunkThings.push_back(&m_chunkThingsL.back());//was m_chunkBuildingsL but I changed it because I am 99.999% sure that was a typo
     return &m_chunkThingsL.back();
+}
+
+pawn* chunk :: spawnPawn(pawnType *thePawn, int chunkPosX, int chunkPosY, int chunkPosZ, int seed)
+{
+    //it has to be in world position not chunk position for drawing to work, since everything is rendered from the player's point of view
+    int wx = (worldX * GLOBAL_TILES_PERCHUNK) + chunkPosX;
+    int wy = (worldY * GLOBAL_TILES_PERCHUNK) + chunkPosY;
+
+    pawn newPawn(thePawn, wx, wy, chunkPosZ, seed);
+
+    cout << "spawning a new pawn of type " << thePawn->defname() << endl;
+    m_chunkPawnsL.push_back(newPawn);
+    m_chunkThings.push_back(&m_chunkPawnsL.back());
+    return &m_chunkPawnsL.back();
 }
 
 //run this upon chunk creation to procedurally spawn in all the plants
@@ -324,6 +341,12 @@ void chunk :: drawChunk(SDL_Renderer *ren, SDL_Window *win, int playerCameraX, i
 
     //draw the generic things
     for (std::list<thing>::iterator it=m_chunkThingsL.begin(); it!=m_chunkThingsL.end(); ++it)
+    {
+        it->drawThing(ren, win, playerCameraX, playerCameraY, playerCameraZ, zoomLevel);
+    }
+
+    //draw all the pawns
+    for (std::list<pawn>::iterator it=m_chunkPawnsL.begin(); it!=m_chunkPawnsL.end(); ++it)
     {
         it->drawThing(ren, win, playerCameraX, playerCameraY, playerCameraZ, zoomLevel);
     }

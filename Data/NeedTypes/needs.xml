@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<NeedType>
+		<defname>Need_Food</defname>
+		<label>Hunger</label>
+		<description>Living things need to eat or they die</description>
+		
+		<!-- not implemented at the moment but the way it will work is whatever function has the same name as this, run it every tick for mod extendability purposes -->
+		<class>Need_Food</class>
+		<tickMethod>OnTick</tickMethod>
+
+		<!-- what's the minimum pawn techLevel that this need will show up for -->
+		<requiresIntelligence>0</requiresIntelligence>
+		<moodElement>Mood_Hunger</moodElement>
+		<important>true</important> 	<!-- if the need is required for survival or not -->
+		<showOnList>true</showOnList> 	<!-- whether it will show up on ui menus or not -->
+		<relevantIfOutOfPlay>true</relevantIfOutOfPlay> 	<!-- if the pawn is out of play, should this get processed during game tick or ignore it? -->
+		<listPriority>0</listPriority><!-- ui list order. lower numbers towards top -->
+		<freezeWhileSleeping>false</freezeWhileSleeping> <!-- whether ontick gets disabled when the pawn is sleeping or not -->
+		<freezeInMentalState>false</freezeInMentalState> <!-- whether ontick gets disable when the pawn is in a mental state or not -->
+		
+		<!-- min and max pawn age for the need to happen at -->
+		<minAge>0.0</minAge>
+		<maxAge>1.0</maxAge>
+
+		<!-- what color should the bar be in the ui -->
+		<barColor>0000FF</barColor>
+	</NeedType>
+
+	<NeedType>
+		<defname>Need_Sleep</defname>
+		<label>Rest</label>
+		<description>Most biological lifeforms need to be able to sleep</description>
+		<class>Need_Sleep</class>
+		<tickMethod>OnTick</tickMethod><!-- probably isn't required, or maybe it is. Idk -->
+
+		<!-- what's the minimum pawn techLevel that this need will show up for -->
+		<requiresIntelligence>0</requiresIntelligence>
+		<moodElement>Mood_Sleep</moodElement>
+		<important>true</important> 	<!-- if the need is required for survival or not -->
+		<showOnList>true</showOnList> 	<!-- whether it will show up on ui menus or not -->
+		<relevantIfOutOfPlay>true</relevantIfOutOfPlay> 	<!-- if the pawn is out of play, should this get processed during game tick or ignore it? -->
+		<listPriority>1</listPriority><!-- ui list order. lower numbers towards top -->
+		<freezeWhileSleeping>false</freezeWhileSleeping> <!-- whether ontick gets disabled when the pawn is sleeping or not -->
+		<freezeInMentalState>false</freezeInMentalState> <!-- whether ontick gets disable when the pawn is in a mental state or not -->
+		
+		<!-- min and max pawn age for the need to happen at -->
+		<minAge>0.0</minAge>
+		<maxAge>1.0</maxAge>
+
+		<!-- what color should the bar be in the ui -->
+		<barColor>0000FF</barColor>
+	</NeedType>
+
+	<NeedType>
+		<defname>Need_Sex</defname>
+		<label>Sex</label>
+		<description>Sex is bad. Sex is dirty. YOU'LL GO TO HELL.</description>
+
+		<!-- not implemented at the moment but the way it will work is whatever function has the same name as this, run it every tick for mod extendability purposes -->
+		<class>Need_Sex</class>
+		<tickMethod>OnTick</tickMethod>
+
+		<!-- what's the minimum pawn techLevel that this need will show up for -->
+		<requiresIntelligence>0</requiresIntelligence>
+		<moodElement>Mood_Sex</moodElement>
+		<important>false</important> 	<!-- if the need is required for survival or not -->
+		<showOnList>true</showOnList> 	<!-- whether it will show up on ui menus or not -->
+		<relevantIfOutOfPlay>false</relevantIfOutOfPlay> 	<!-- if the pawn is out of play, should this get processed during game tick or ignore it? -->
+		<listPriority>10</listPriority><!-- ui list order. lower numbers towards top -->
+		<freezeWhileSleeping>false</freezeWhileSleeping> <!-- whether ontick gets disabled when the pawn is sleeping or not -->
+		<freezeInMentalState>false</freezeInMentalState> <!-- whether ontick gets disable when the pawn is in a mental state or not -->
+		
+		<!-- min and max pawn age for the need to happen at -->
+		<minAge>0.8</minAge> <!-- let's not have a bunch of horny babies running around -->
+		<maxAge>1.0</maxAge>
+
+		<!-- what color should the bar be in the ui -->
+		<barColor>0000FF</barColor>
+	</NeedType>
+
+	<NeedType>
+		<defname>Need_Joy</defname>
+		<label>Recreation</label>
+		<description>Gotta so some fun stuff some times</description>
+		<class>Need_Joy</class>
+		<tickMethod>OnTick</tickMethod><!-- probably isn't required, or maybe it is. Idk -->
+
+		<!-- what's the minimum pawn techLevel that this need will show up for -->
+		<requiresIntelligence>1</requiresIntelligence>
+		<moodElement>Mood_Joy</moodElement>
+		<important>false</important> 	<!-- if the need is required for survival or not -->
+		<showOnList>true</showOnList> 	<!-- whether it will show up on ui menus or not -->
+		<relevantIfOutOfPlay>false</relevantIfOutOfPlay> 	<!-- if the pawn is out of play, should this get processed during game tick or ignore it? -->
+		<listPriority>3</listPriority><!-- ui list order. lower numbers towards top -->
+		<freezeWhileSleeping>false</freezeWhileSleeping> <!-- whether ontick gets disabled when the pawn is sleeping or not -->
+		<freezeInMentalState>true</freezeInMentalState> <!-- whether ontick gets disable when the pawn is in a mental state or not -->
+		
+		<!-- min and max pawn age for the need to happen at -->
+		<minAge>0.0</minAge>
+		<maxAge>1.0</maxAge>
+
+		<!-- what color should the bar be in the ui -->
+		<barColor>0000FF</barColor>
+	</NeedType>
+
+	<NeedType>
+		<defname>Need_Thirst</defname>
+		<label>Thirst</label>
+		<description>Most biological lifeforms need water to survive.</description>
+
+		<class>Need_Thirst</class>
+		<tickMethod>OnTick</tickMethod><!-- probably isn't required, or maybe it is. Idk -->
+
+		<!-- what's the minimum pawn techLevel that this need will show up for -->
+		<requiresIntelligence>0</requiresIntelligence>
+		<moodElement>Mood_Thirst</moodElement>
+		<important>true</important> 	<!-- if the need is required for survival or not -->
+		<showOnList>true</showOnList> 	<!-- whether it will show up on ui menus or not -->
+		<relevantIfOutOfPlay>true</relevantIfOutOfPlay> 	<!-- if the pawn is out of play, should this get processed during game tick or ignore it? -->
+		<listPriority>5</listPriority><!-- ui list order. lower numbers towards top -->
+		<freezeWhileSleeping>false</freezeWhileSleeping> <!-- whether ontick gets disabled when the pawn is sleeping or not -->
+		<freezeInMentalState>false</freezeInMentalState> <!-- whether ontick gets disable when the pawn is in a mental state or not -->
+		
+		<!-- min and max pawn age for the need to happen at -->
+		<minAge>0.0</minAge>
+		<maxAge>1.0</maxAge>
+
+		<!-- what color should the bar be in the ui -->
+		<barColor>0000FF</barColor>
+	</NeedType>
+
+	<NeedType>
+		<!-- pee vs poop. Both are ambiguous -->
+		<defname>Need_Bathroom</defname>
+		<label>Waste</label>
+		<description>Most biological lifeforms excrete waste as a part of the metabolic process.</description>
+		
+		<class>Need_Bathroom</class>
+		<tickMethod>OnTick</tickMethod><!-- probably isn't required, or maybe it is. Idk -->
+
+		<!-- what's the minimum pawn techLevel that this need will show up for -->
+		<requiresIntelligence>0</requiresIntelligence>
+		<moodElement>Mood_Bathroom</moodElement>
+		<important>true</important> 	<!-- if the need is required for survival or not -->
+		<showOnList>true</showOnList> 	<!-- whether it will show up on ui menus or not -->
+		<relevantIfOutOfPlay>true</relevantIfOutOfPlay> 	<!-- if the pawn is out of play, should this get processed during game tick or ignore it? -->
+		<listPriority>6</listPriority><!-- ui list order. lower numbers towards top -->
+		<freezeWhileSleeping>false</freezeWhileSleeping> <!-- whether ontick gets disabled when the pawn is sleeping or not -->
+		<freezeInMentalState>false</freezeInMentalState> <!-- whether ontick gets disable when the pawn is in a mental state or not -->
+		
+		<!-- min and max pawn age for the need to happen at -->
+		<minAge>0.0</minAge>
+		<maxAge>1.0</maxAge>
+
+		<!-- what color should the bar be in the ui -->
+		<barColor>0000FF</barColor>
+	</NeedType>
+
+	<NeedType>
+		<defname>Need_Beauty</defname>
+		<label>Beauty</label>
+		<description>Some forms of sentient life need to be around beauty and away from filth.</description>
+		
+		<class>Need_Beauty</class>
+		<tickMethod>OnTick</tickMethod><!-- probably isn't required, or maybe it is. Idk -->
+
+		<!-- what's the minimum pawn techLevel that this need will show up for -->
+		<requiresIntelligence>2</requiresIntelligence>
+		<moodElement>Mood_Beauty</moodElement>
+		<important>false</important> 	<!-- if the need is required for survival or not -->
+		<showOnList>true</showOnList> 	<!-- whether it will show up on ui menus or not -->
+		<relevantIfOutOfPlay>false</relevantIfOutOfPlay> 	<!-- if the pawn is out of play, should this get processed during game tick or ignore it? -->
+		<listPriority>7</listPriority><!-- ui list order. lower numbers towards top -->
+		<freezeWhileSleeping>true</freezeWhileSleeping> <!-- whether ontick gets disabled when the pawn is sleeping or not -->
+		<freezeInMentalState>true</freezeInMentalState> <!-- whether ontick gets disable when the pawn is in a mental state or not -->
+		
+		<!-- min and max pawn age for the need to happen at -->
+		<minAge>0.2</minAge>
+		<maxAge>1.0</maxAge>
+
+		<!-- what color should the bar be in the ui -->
+		<barColor>0000FF</barColor>
+	</NeedType>
+</Defs>

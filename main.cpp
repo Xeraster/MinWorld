@@ -44,8 +44,32 @@ struct positionEntry
 	int posZ;
 };
 
+//make it so you can pass frequently used bools as parameters
+//you just cant get around circular dependencies via forward declaration in c++ so i'm going to try to remedy the situation by declaring shared structs before anything important
+struct pawnState
+{
+    bool m_isAlive = false;
+    bool m_isAsleep = false;
+    bool m_isInMentalState = false;
+};
+
+//the pawnDriver sets values in here to control the pawn since it can't directly read the pawn object for c++ reasons. in c++ load order causes issues like this. in c# where load orders aren't a thing, this doesn't happen
+struct pawnControls
+{
+	//can go in any 0-360 rotation to make fine adjustments but generally only uses 0, 45, 90, 135, 180, 225, 270, 315
+	double m_direction;
+	
+	//0.0f - 1.0f. percentage of pawn's max travel speed
+	double m_speed;
+};
+
 #include "code/game/objects/thingType.h"
+#include "code/game/pawnProperties/needType.h"
+#include "code/game/pawnProperties/need.h"
+#include "code/game/objects/pawnType.h"
 #include "code/game/objects/thing.h"
+#include "code/game/ai/pawnDriver.h"	//pawn driver right before pawn. This way it could access a pawnType if it wanted as well as relevant pawn helper classes. The pawn onTick still has to constantly check and "do what the pawn driver says" but i think this is the best that can be done in c++
+#include "code/game/objects/pawn.h"
 
 const int GLOBAL_TILES_PERCHUNK = 100;
 #include "code/textureEntry.h"
@@ -151,10 +175,16 @@ int main()
 	setupMainMenu();
 
 	//achieving the correct load order is everything
+	loadAllNeedTypes(ren);
 
+	//things and pawns are closely related but not exactly the same as each other
 	cout << "get ready for a possible crash" << endl;
 	loadAllThingTypes(ren);
 	cout << "there are " << thingTypeDatabase.size() << " thing types loaded in the thingType database" << endl;
+
+	cout << "get ready to load pawn types (possible crash if there's broken stuff)";
+	loadAllPawnTypes(ren);
+	cout << "there are " << pawnTypeDatabase.size() << " pawn types loaded in the database" << endl;
 
 	loadAllTerrain(ren);
 	//loadAllPlants(ren);
@@ -175,6 +205,10 @@ int main()
 
 	//plant newPlant(getPlantTypeByDefName("Tree"), 20, 50, 1);
 	thing newTest;
+	need testNeed = need(GetNeedTypeByDefName("Need_Sex"), 69420);
+	cout << "created need object" << endl;
+
+	cout << "pointer test: " << getPawnTypeByDefName("Cattoid")->getNeedAt(1)->defname() << endl;
 
 	/*std::string imagePath = "Textures/Qualifications/flak_gunner.bmp";
 	SDL_Surface *bmp = SDL_LoadBMP(imagePath.c_str());
@@ -296,15 +330,13 @@ int main()
 		//since we can't check for 16.66667, check for 16. This means monitors with 60fps will run at 60fps but refresh rate settings higher than 60fps will run at 62.5 fps
 		if (msSinceLastFrame < 16)
 		{
-			cout << "frame delay. Frame finished rendering in " << to_string(16-msSinceLastFrame) << "ms early" << endl;
+			//cout << "frame delay. Frame finished rendering in " << to_string(16-msSinceLastFrame) << "ms early" << endl;
 			SDL_Delay(16-msSinceLastFrame);
 			//whatever. At least I found a way to cap frames at 16ms instead of 17ms. 62.5 is a better framerate than 58.8235
+			//todo: try this https://www.libsdl.org/release/SDL-1.2.15/docs/html/guidetimeexamples.html
 		}
 
 	}
-
-	//the end of the game loop. This is where the deletion of sdl textures in every object type should go in order to prevent valgrind from complaining
-	//I need for valgrind to report stuff that actually matters
 
 	return 0;
 }
@@ -372,6 +404,12 @@ void update()
 		//cout << "windowsize = " << screenSizeX(win) << "x" << screenSizeY(win) << endl;
 		uint32_t bluh = 42069;
 
+		//tick all the loaded things before touching the renderer for the next frame
+		if (normalInGame)
+		{
+			playerData.doPlayerTick();
+			playerData.doPlayerTick();
+		}
 
 		//First clear the renderer
 		SDL_RenderClear(ren);

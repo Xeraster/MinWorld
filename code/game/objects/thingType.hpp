@@ -111,7 +111,8 @@ void loadAllGenericTypes(SDL_Renderer *ren)
     for (int i = 0; i < filePaths.size(); i++)
     {
         XMLDocument doc;
-        doc.LoadFile(filePaths.at(i).c_str());
+        XMLError error = doc.LoadFile(filePaths.at(i).c_str());
+        cout << "building file loaded with error id of " << error << endl;
 
         if (doc.RootElement() == nullptr)
 	    {

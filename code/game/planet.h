@@ -1,6 +1,58 @@
 #ifndef PLANET_H
 #define PLANET_H
 
+struct dateAndTime
+{
+    //milliseconds of this day so far
+    unsigned int ms;
+    unsigned int hour;
+    unsigned int year;
+    unsigned int day;
+
+    unsigned int lastTickValue = 0;
+
+    //run this for each tick to make time increment
+    void timeTick(unsigned int secsPerDay, unsigned int daysPerYear)
+    {
+        //figure out number of milliseconds per day
+        if (lastTickValue != 0)
+        {
+            //on every frame, update ctr by number of elasped milliseconds
+            ms += (SDL_GetTicks() - lastTickValue);
+
+            //calulate hour
+            hour = static_cast<double>(ms/1000) / static_cast<double>(secsPerDay) * 24.0f;
+            //hour = 
+
+            if (ms >= secsPerDay * 1000)
+            {
+                day++;
+                ms = 0;
+            }
+
+            if (day >= daysPerYear)
+            {
+                year++;
+                day = 0;
+            }
+        }
+        //if lastTickValue == 0, do setup
+        else
+        {
+            //no. don't do this
+            //ms = 0;
+            //hour = 0;
+            //year = 0;
+            //day = 0;
+        }
+
+        //it's on the graphical ui now, we don't need to do this anymore
+        //cout << "this planet's date and time is: day " << day << " year: " << year << " hour: " << hour << " sec: " << to_string(ms/1000) << endl;
+
+        lastTickValue = SDL_GetTicks();
+    }
+};
+
 class planet
 {
     public:
@@ -79,6 +131,11 @@ class planet
         //returns true if chunkToCheck is adjacent to centerFocusChunk
         bool isAdjacentToActiveChunk(chunk* centerFocusChunk, chunk* chunkToCheck);
 
+        dateAndTime getDateTime() const { return m_time; }
+
+        //generate a new date and time based on the planet's seed
+        void generateNewDateFromSeed();
+
         void doTick();
 
         planet operator=(const planet& rhs);
@@ -96,9 +153,13 @@ class planet
         unsigned int m_secsPerDay;  //all planet days are "24 hours". The length of an hour depends on the number of seconds in a day divided by 24
         unsigned int m_daysInYear;
 
+        unsigned int m_ticksTilNextSecond;//how many ticks until the next second
+
         int m_seed;
 
         float getAvgTempForChunk(unsigned int posX, unsigned int posY);
+
+        dateAndTime m_time;
 };
 
 #include "planet.hpp"

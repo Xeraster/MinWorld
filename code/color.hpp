@@ -40,7 +40,9 @@ color :: color(string hex)
 		green = stringToHex(gs);
 		blue = stringToHex(bs);
 		alpha = 255;
-		cout << "new color = " << to_string(red) << ", " << to_string(green) << ", " << to_string(blue) << endl;
+
+		//this log spam is starting to get annoying
+		//cout << "new color = " << to_string(red) << ", " << to_string(green) << ", " << to_string(blue) << endl;
 	}
 }
 

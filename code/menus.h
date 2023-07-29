@@ -1,3 +1,5 @@
+int textSizeTiny;
+int textSizeExtraSmall;
 int textSizeSmall;
 int textSizeMedium;
 int textSizeLarge;

@@ -4,6 +4,12 @@ planet :: planet()
     loadedChunks = vector<chunk*>();
     m_chunksLoaded = false;
     cout << "in planet default constructor" << endl;
+    m_ticksTilNextSecond = 60;
+    
+    /*m_time.day = 0;
+    m_time.ms = 0;
+    m_time.hour = 0;
+    m_time.year = 0;*/
 }
 
 /*
@@ -20,7 +26,7 @@ planet :: planet(unsigned int seed, double temp, double eccentricity, double axi
     //just use the member fuctions
     //programming in c++ is like taking a shit after a long night of spicy wings and booze. It feels amazing while doing it but everyone in your apartment can smell it
     setAvgTemp(temp);//default value is 4
-	setDaysInYear(eccentricity*60);//eccentricity is just a multiplier. 1 = 1 year is 60 days. 2 = 1 year is 120 days
+	setDaysInYear(eccentricity);//eccentricity is just a multiplier. 1 = 1 year is 60 days. 2 = 1 year is 120 days
 	setTempVariance(axialTilt);//axial tilt more or less. changes how extreme temperatures get in the coldest and hotest part of the year
     setSecsPerDay(50000);//arbitrary placeholder value
 	setSeed(seed);
@@ -34,6 +40,13 @@ planet :: planet(unsigned int seed, double temp, double eccentricity, double axi
     generateWorld(100, 100);//generate the world. should be memory safe now
     //water not implemented yet
     //population not implemented yet
+
+    m_ticksTilNextSecond = 60;
+
+    //generate a suitable starting date and time from the current planet information
+    generateNewDateFromSeed();
+
+    cout << "planet var constructor set year to " << m_time.year << endl;
 
 }
 
@@ -61,6 +74,17 @@ planet :: planet(const planet& rhs)
     cout << "in planet copy constructor" << endl;
     //generate the world. should be memory safe now
     generateWorld(100, 100);//generate world doesn't clear the chunks before over writing. This causes memory leaks. Fix it
+
+    m_ticksTilNextSecond = 60;
+
+    //m_time.day = betterRand(m_seed + m_secsPerDay * m_daysInYear) % m_daysInYear;
+    //m_time.ms = betterRand(m_seed * m_secsPerDay + m_daysInYear) % (m_secsPerDay * 1000);
+    //m_time.hour = betterRand(m_seed + 4252 * 555) % 24;
+    //m_time.year = betterRand(m_seed * m_time.hour + m_time.ms * m_time.day);
+
+    m_time = rhs.getDateTime();
+
+    cout << "planet copy constructor set year to " << m_time.year << endl;
 }
 
 //destructor. Needs to call the chunk deletion function and in the future probably a lot of other things
@@ -422,11 +446,30 @@ bool planet :: isAdjacentToActiveChunk(chunk* centerFocusChunk, chunk* chunkToCh
     else return false;
 }
 
+//generate a new date and time based on the planet's seed
+void planet :: generateNewDateFromSeed()
+{
+    m_time.day = betterRand(m_seed + m_secsPerDay * m_daysInYear) % m_daysInYear;
+    m_time.ms = betterRand(m_seed * m_secsPerDay + m_daysInYear) % (m_secsPerDay * 1000);
+    //hour is derived from ms
+    //m_time.hour = betterRand(m_seed + 4252 * 555) % 24;
+    //cout << "hour random planet gen = " << betterRand(m_seed + 4252 * 555) % 24 << endl;
+    m_time.year = (betterRand(m_seed * m_time.hour + m_time.ms * m_time.day) % 7000) + 1000;
+}
+
 void planet :: doTick()
 {
-    const int FRAMESPERSEC = 60;//ffs figure out a better way to do this
+    //const int FRAMESPERSEC = 60;//ffs figure out a better way to do this
+    //1 tick = do 1 thing.
+    /*there are supposed to be 60 ticks per second. 
+    If bounding box based collisions are to be used, this will need to be taken into account
+    this means you can only target 15, 30, 60 or 120 fps. Despite the downsides, this should be the most performant possible way to do this.
+    threading will be used to bulk batch operations  (like growing all the plants every tick for example) but it can't be used for sdl rendering or things that move a lot of data (race conditions)
+    */
 
-    
+   //tick the planet's local time
+   m_time.timeTick(m_secsPerDay, m_daysInYear);
+   
 }
 
 planet planet :: operator=(const planet& rhs)
@@ -453,6 +496,15 @@ planet planet :: operator=(const planet& rhs)
     //generate the world. should be memory safe now
     cout << "in planet operator=" << endl;
     generateWorld(100, 100);//generate the world. should be memory safe now
+
+    m_ticksTilNextSecond = 60;
+
+    //m_time.day = betterRand(m_seed + m_secsPerDay * m_daysInYear) % m_daysInYear;
+    //m_time.ms = betterRand(m_seed * m_secsPerDay + m_daysInYear) % (m_secsPerDay * 1000);
+    //m_time.hour = betterRand(m_seed + 4252 * 555) % 24;
+    //m_time.year = (betterRand(m_seed * m_time.hour + m_time.ms * m_time.day) % 7000) + 400;
+    m_time = rhs.getDateTime();
+    cout << "planet operator= set year to " << m_time.year << endl;
 
     return *this;
 

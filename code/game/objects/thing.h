@@ -72,6 +72,7 @@ class plant : public thing
 
     protected:
         double m_growthProgress; //0 = newly planted. 1 = fully grown
+        //faction *m_faction;//nullptr if "wild" or natrual (i.e. wild plants or animals)
         plantType *m_type;
 };
 
@@ -83,8 +84,12 @@ class building : public thing
         //overload for creating a thing of type building from a given buildingType def name
         building(string typeDef, int x, int y, int z, int seed);
 
-        /*maybe this will solve the bullshit "variables not holding value" problem
+        /*maybe this will solve the "variables not holding value" problem
         i think maybe this is what vector push back looks for*/
+        /*out of context update from like 2 months later: yes, this is required. no, it did not solve the problem. using lists instead of 
+        vectors in all the places my "variables not holding value" bug was happening solved the problem. List pointers still point to the correct memory location after
+        a list is modified. vectors don't do that
+        */
         building(const building &rhs);
 
         //overload for creating a thing of type building from a given buildingType pointer
@@ -138,7 +143,7 @@ class building : public thing
 */
 
 //this is where all the created things go
-vector<thing*> worldThings;
+vector<thing*> worldThings;//hmm, I guess the scope of this is more than just 1 world. (i want it to be possible to have multiple planets like in Factorio Space Exploration some day)
 
 //however the data each child thing needs to be stored in its own vector which means there has to be a vector for each category.. yeah
 vector<plant> worldPlants;

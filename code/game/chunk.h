@@ -47,6 +47,8 @@ class chunk
         */
         thing *spawnThing(thingType *theThing, int chunkPosX, int chunkPosY, int chunkPosZ, int seed);
 
+        pawn *spawnPawn(pawnType *thePawn, int chunkPosX, int chunkPosY, int chunkPosZ, int seed);
+
         //run this upon chunk creation to procedurally spawn in all the plants
         void generatePlantsFromSeed(int seed);
 
@@ -95,6 +97,7 @@ class chunk
         list<thing> m_chunkThingsL;
         list<plant> m_chunkPlantsL;
         list<building> m_chunkBuildingsL; // use list instead of vector because resizing a list doesn't change object reference addresses
+        list<pawn> m_chunkPawnsL;
 
         //returns true if the given plant kind can grow on the provided tile
         bool canPlantGrowHere(plantType *type, int chunkX, int chunkY, int chunkZ);

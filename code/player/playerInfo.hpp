@@ -178,7 +178,6 @@ void playerInfo :: drawPlanetMinimal(int zLevel, double zoomAmt)
     if (starty < 0) starty = 0;
     if (endy > m_viewPlanet->TILESPERCHUNK) endy = m_viewPlanet->TILESPERCHUNK;
 
-    //if this works without absolutely tanking performance I will livestream my ass on Twitch
     //for (int x = 0; x < m_viewPlanet->TILESPERCHUNK; x++)
     for (int x = startx; x < endx; x++)
     {
@@ -192,8 +191,6 @@ void playerInfo :: drawPlanetMinimal(int zLevel, double zoomAmt)
             }
         }
     }
-
-    //damn, I guess I'll stream my ass on Twitch
     //it could still be better. Just because it runs well on a Ryzen 5 doesn't mean it'll run well on an Athlon Xp
 }
 
@@ -270,5 +267,33 @@ void playerInfo :: renderPlayerScreen()
     else
     {
         drawPlanetMinimal(m_zLevel, m_zoomAmt);
+    }
+
+    //draw the ui stuff
+    string timeDateString = printPlanetDateTime();
+    drawText(ren, textSizeExtraSmall, color(255,255,255), printPlanetDateTime(), gscreenx - getTextXSize(textSizeSmall, timeDateString.length()), gscreeny - 100);
+}
+
+void playerInfo :: doPlayerTick()
+{
+    //cout << m_viewPlanet->getDaysInYear() << endl;
+    m_viewPlanet->doTick();
+}
+
+//takes the planet's date and time and parses it into a string
+string playerInfo :: printPlanetDateTime()
+{
+    //only do it if there's a valid planet being pointed to
+    if (m_viewPlanet != nullptr)
+    {
+        string theString = to_string(m_viewPlanet->getDateTime().hour) + "H ";
+        theString += "Day: " + to_string(m_viewPlanet->getDateTime().day);
+        theString += "  Y: " + to_string(m_viewPlanet->getDateTime().year);
+
+        return theString;
+    }
+    else
+    {
+        return "nullptr error";
     }
 }

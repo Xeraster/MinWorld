@@ -6,6 +6,13 @@
 const double MAXZOOMLEVEL = 50000;      //the closest the player is allowed to zoom in
 const double MINZOOMLEVEL = 0.01;       //the furthest the player is allowed to zoom out
 
+//extern font stuff from main menu
+extern int textSizeTiny;
+extern int textSizeExtraSmall;
+extern int textSizeSmall;
+extern int textSizeMedium;
+extern int textSizeLarge;
+
 extern const Uint8 *lastKey;
 class playerInfo
 {
@@ -37,6 +44,11 @@ class playerInfo
 
         void renderPlayerScreen();
 
+        void doPlayerTick();
+
+        //takes the planet's date and time and parses it into a string
+        string printPlanetDateTime();
+
     private:
         //draws everything
         void drawPlanetComplete(int zLevel, double zoomAmt);
@@ -63,6 +75,9 @@ class playerInfo
 
         //random seed to use when generating stuff
         int m_seed;
+
+        //playerINfo keeps track of time since last initialized
+        dateAndTime m_timeSinceStart;
 
         //ui stuff
         double m_zoomAmt;
